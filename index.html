@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Window Cleaning Reminders&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 0 15px; background: #f4f7f6; color: #333; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1, h2 { color: #0288d1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label { display: block; margin-top: 10px; font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button { background: #0288d1; color: white; border: none; padding: 10px 15px; margin-top: 15px; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover { background: #01579b; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-item { background: #e1f5fe; padding: 10px; margin-top: 10px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; border-left: 5px solid #0288d1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.delete-btn { background: #e53935; width: auto; margin: 0; padding: 5px 10px; font-size: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.delete-btn:hover { background: #b71c1c; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;🪟 Window Cleaning Planner&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Step 1: Permission Box --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;1. Enable Alerts&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="auth-btn"&gt;Allow Notifications&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Step 2: Add Job Form --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;2. Add New Job&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="client"&gt;Client Name / Address:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="client" placeholder="e.g., Smith - 123 Main St"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label for="job-date"&gt;Job Date &amp; Time:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="datetime-local" id="job-date"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button id="save-btn"&gt;Add to Schedule&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Step 3: Job List --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;📅 Upcoming Schedule&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="job-list"&gt;No jobs scheduled yet.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const authBtn = document.getElementById('auth-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const saveBtn = document.getElementById('save-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const clientInput = document.getElementById('client');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dateInput = document.getElementById('job-date');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const jobListDiv = document.getElementById('job-list');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let jobs = JSON.parse(localStorage.getItem('cleaning_jobs')) || [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Request Permission</p>
+<p class="p1"><span class="Apple-converted-space">        </span>authBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Notification.requestPermission().then(permission =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (permission === 'granted') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>alert('Notifications enabled successfully!');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>authBtn.textContent = '✅ Notifications Enabled';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>authBtn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Update Button text if already granted</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (Notification.permission === 'granted') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>authBtn.textContent = '✅ Notifications Enabled';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>authBtn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Save a job</p>
+<p class="p1"><span class="Apple-converted-space">        </span>saveBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const client = clientInput.value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const dateStr = dateInput.value;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!client || !dateStr) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('Please fill out both fields!');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const job = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id: Date.now(),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>client: client,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>dateTime: dateStr,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>notified: false</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>jobs.push(job);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('cleaning_jobs', JSON.stringify(jobs));</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>clientInput.value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>dateInput.value = '';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderJobs();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Delete a job</p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.deleteJob = (id) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>jobs = jobs.filter(job =&gt; job.id !== id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('cleaning_jobs', JSON.stringify(jobs));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderJobs();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Render job list to screen</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderJobs() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (jobs.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobListDiv.innerHTML = 'No jobs scheduled yet.';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Sort jobs by closest date first</p>
+<p class="p1"><span class="Apple-converted-space">            </span>jobs.sort((a, b) =&gt; new Date(a.dateTime) - new Date(b.dateTime));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>jobListDiv.innerHTML = jobs.map(job =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const formattedDate = new Date(job.dateTime).toLocaleString([], {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>dateStyle: 'short',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>timeStyle: 'short'</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="job-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;strong&gt;${job.client}&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;small&gt;📅 ${formattedDate}&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button class="delete-btn" onclick="deleteJob(${job.id})"&gt;Remove&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).join('');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ⏰ Checks every 10 seconds for 1-week alerts</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function checkReminders() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (Notification.permission !== 'granted') return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const now = new Date();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ONE_WEEK_MS = 604800000; // 7 days in milliseconds</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let updated = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>jobs.forEach(job =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const jobTime = new Date(job.dateTime);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const timeDiff = jobTime - now;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Trigger alert if the job is less than 7 days away and hasn't triggered yet</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (timeDiff &gt; 0 &amp;&amp; timeDiff &lt;= ONE_WEEK_MS &amp;&amp; !job.notified) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>new Notification("🪟 Window Cleaning Reminder!", {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>body: `1 week until job for: ${job.client}`,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>requireInteraction: true<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>job.notified = true;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>updated = true;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (updated) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>localStorage.setItem('cleaning_jobs', JSON.stringify(jobs));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initial run</p>
+<p class="p1"><span class="Apple-converted-space">        </span>renderJobs();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>setInterval(checkReminders, 10000);<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
